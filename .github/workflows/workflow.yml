@@ -1,17 +1,18 @@
-name: Windows Workflow
+name: My Workflow
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch: # Add this trigger for manual workflow dispatches
 
 jobs:
   build:
-    runs-on: windows-latest
-    
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Print OS Version
-        run: echo %OS%
+      - name: Run Build Script
+        run: echo "Hello, World!"
